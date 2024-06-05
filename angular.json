@@ -75,8 +75,11 @@
               "browserTarget": "jwt-token:build:development"
             }
           },
-          "defaultConfiguration": "development"
-        },
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "src/proxy.json"
+        }
+      },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
@@ -103,5 +106,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8cc135f3-103d-4472-98a7-d64c51f12eaf"
   }
 }
