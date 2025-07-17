@@ -1,27 +1,27 @@
 # JwtToken
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
 
-## Development server
+JWT
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+JWTs are digitally signed JSON payloads, encoded in a URL-friendly string format. A JWT can contain any payload in general, but the most common use case is to use the payload to define a user session. To confirm if JWT is valid, we only need to inspect the token itself and validate the signature, without having to contact a separate server for that, or keeping the tokens in memory or in the database between requests.If JWTs are used for Authentication, they will contain at least a user ID and an expiration timestamp.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+{
+  "sub": "353454354354353453",
+  "exp": 1504699256
+}
 
-## Build
+The sub property contains the user identifier, and the exp property contains the expiration timestamp. This type of token is known as a Bearer Token, meaning that it identifies the user that owns it, and defines a user session.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This is 
 
-## Running unit tests
+{
+  "sub": "353454354354353453",
+  "exp": 1504699256
+}
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+converted to this format 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzNTM0NTQzNTQzNTQzNTM0NTMiLCJleHAiOjE1MDQ2OTkyNTZ9.zG-2FvGegujxoLWwIQfNB5IT46D-xC4e8dEDYwi6aRM'
 
-## Running end-to-end tests
+A bearer token is a signed temporary replacement for the username/password combination!
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The very first step for implementing JWT-based Authentication is to issue a bearer token and give it to the user, and that is the main purpose of a Login / Sign up page.
